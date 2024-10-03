@@ -8,8 +8,6 @@
  <h6 class="2">@TempData["update_notification"]</h6>
  <h6 class="3">@TempData["delete_notification"]</h6>
 
-
-
 <h1>Tasks List</h1>
 
 <p>
@@ -22,13 +20,13 @@
                Title
             </th>
             <th>
-               Description
+             Description
             </th>
             <th>
              Task Date
             </th>
             <th>
-               Added By
+             Added By
             </th>
             <th></th>
         </tr>
@@ -43,7 +41,14 @@
               @item.Description
             </td>
               <td>
-            @item.TaskDate
+                    @if (@item.TaskDate < DateOnly.FromDateTime(DateTime.Today))
+                  {
+                        <p class="old"> @item.TaskDate</p>
+                  }
+                  else
+                  {
+                        @item.TaskDate
+                  }
                </td>
                 <td>
             @item.User
@@ -57,3 +62,14 @@
 }
     </tbody>
 </table>
+
+
+<style>
+    .old
+    {
+    color:red;
+    font-weight:bold;
+
+    }
+
+</style>

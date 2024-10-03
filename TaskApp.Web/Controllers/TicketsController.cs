@@ -135,16 +135,13 @@ namespace TaskApp.Web.Controllers
             if (id == null) 
             {
                 return NotFound();
-            
             }
 
             var tasks = _context.Tickets.Where(t => t.Id == id).FirstOrDefault();
 
             if (tasks == null) 
             { 
-            
             return NotFound();
-            
             }
 
             return View(tasks);

@@ -1,14 +1,15 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
-<div class="text-center">
-  
-  <h1>Task Manager</h1>
-</div>
-
-<div class="logins">
-
+    <h4 class="menu">Main Menu</h4>
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
@@ -17,7 +18,7 @@
                     <div class="card-body">
                         <h5 class="card-title"></h5>
                         <p class="card-text"></p>
-                        <a class="btn btn-dark mainbtn" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                        <a asp-action="Create" asp-controller="Tickets" class="btn btn-dark">Add New Task</a>
                     </div>
                 </div>
             </div>
@@ -29,17 +30,12 @@
                     <div class="card-body">
                         <h5 class="card-title"></h5>
                         <p class="card-text"></p>
-                        <a class="btn btn-dark mainbtn" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                        <a asp-action="Index" asp-controller="Tickets" class="btn btn-dark">My Tasks</a>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-
-
-
-
-
-
-</div>
+</body>
+</html>

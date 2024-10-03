@@ -11,7 +11,7 @@ namespace TaskApp.Web.Models
         [Required]
         [StringLength(100, MinimumLength = 30)]
         public string Description { get; set; }
-        
+        public DateOnly TaskDate { get; set; } = DateOnly.FromDateTime(DateTime.Today);
         public DateTime Time { get; set; } = DateTime.Now;
         public string? User {  get; set; } 
 

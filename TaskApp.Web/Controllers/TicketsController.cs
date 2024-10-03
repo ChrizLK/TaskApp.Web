@@ -127,5 +127,33 @@ namespace TaskApp.Web.Controllers
                 return RedirectToAction("Index");
         }
 
+
+
+        //Task Details Get
+        public IActionResult Details(int? id) 
+        {
+            if (id == null) 
+            {
+                return NotFound();
+            
+            }
+
+            var tasks = _context.Tickets.Where(t => t.Id == id).FirstOrDefault();
+
+            if (tasks == null) 
+            { 
+            
+            return NotFound();
+            
+            }
+
+            return View(tasks);
+
+        }
+
+
+
+
+
     }
 }
